@@ -4,13 +4,19 @@
 //Example input [{ name: 'David', age: 22}, {name: 'Juan', age: 17}]
 //Example output ['David']
 
-function makeStringsWhoCanAccess(persons){
+function makeStringsWhoCanAccess(persons) {
     // your code here
+    let temp = [];
+    for (const iterator of persons) {
+        if (iterator.age >= 18)
+            temp.push(iterator.name)
+    }
+    return temp;
 }
 
 let test = require('../test.js');
 
 test(makeStringsWhoCanAccess, [[]], []);
-test(makeStringsWhoCanAccess, [[{name: 'Juan', age: 18}, {name: 'Paco', age: 2}, {name: 'Fran', age: 19}]], ['Juan', 'Fran']);
-test(makeStringsWhoCanAccess, [[{name:  'David', age: 10}]], []);
+test(makeStringsWhoCanAccess, [[{ name: 'Juan', age: 18 }, { name: 'Paco', age: 2 }, { name: 'Fran', age: 19 }]], ['Juan', 'Fran']);
+test(makeStringsWhoCanAccess, [[{ name: 'David', age: 10 }]], []);
 

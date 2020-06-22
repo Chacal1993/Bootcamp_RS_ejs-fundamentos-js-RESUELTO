@@ -1,8 +1,16 @@
 // Take an array of numbers and make them strings
 // Example input [2, 5, 100] ex output: ["2", "5", "100"]
 
-function stringItUp(numbers){
+function stringItUp(numbers) {
     // your code here
+    let temp = [];
+    for (let iter1 of numbers) {
+        if (typeof iter1 === 'number')
+            temp.push(iter1.toString())
+        else
+            temp.push(iter1);
+    }
+    return temp;
 }
 
 

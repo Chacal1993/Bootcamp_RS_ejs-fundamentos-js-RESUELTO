@@ -17,16 +17,24 @@
 //Example output: ['Born in the U.S.A.']
 
 
-function songsOfArtist(songs, artistName){
+function songsOfArtist(songs, artistName) {
     //Your code goes here
+    let temp = [];
+    for (const iterator of songs) {
+        if (iterator.artist === artistName)
+            temp.push(iterator.song)
+        else
+            temp;
+    }
+    return temp
 }
 
 let test = require('../test.js');
 
 test(songsOfArtist, [[]], []);
 test(songsOfArtist, [[
-    { 
-        song: 'Born in the U.S.A.', 
+    {
+        song: 'Born in the U.S.A.',
         artist: 'Bruce Springsteen'
     },
     {
@@ -35,8 +43,8 @@ test(songsOfArtist, [[
     }
 ], 'Bruce Springsteen'], ['Born in the U.S.A.']);
 test(songsOfArtist, [[
-    { 
-        song: 'Born in the U.S.A.', 
+    {
+        song: 'Born in the U.S.A.',
         artist: 'Bruce Springsteen'
     },
     {

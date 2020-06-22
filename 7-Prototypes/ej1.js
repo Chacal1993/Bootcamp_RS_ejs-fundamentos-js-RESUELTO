@@ -4,12 +4,19 @@
 
 function fiveAndGreaterOnly(numbers) {
     // your code here
+    let temp = [];
+    for (const iterator of numbers) {
+        if (iterator >= 5)
+            temp.push(iterator);
+
+    }
+    return temp;
 }
 
 
 
 let test = require('../test.js');
 
-test(fiveAndGreaterOnly, [[1,2,3]], []);
-test(fiveAndGreaterOnly, [[1,2,3, 4,5]], [5]);
-test(fiveAndGreaterOnly, [[5, 6, 7, 8]], [5,6,7,8]);
+test(fiveAndGreaterOnly, [[1, 2, 3]], []);
+test(fiveAndGreaterOnly, [[1, 2, 3, 4, 5]], [5]);
+test(fiveAndGreaterOnly, [[5, 6, 7, 8]], [5, 6, 7, 8]);
